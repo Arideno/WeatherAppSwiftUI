@@ -9,21 +9,22 @@ import Foundation
 
 struct WeatherData: Codable, Identifiable {
     
-    var id: Int?
-    var main: Main?
-    var weather: [Weather]?
-    var wind: Wind?
+    var id: Int
+    var main: Main
+    var weather: [Weather]
+    var wind: Wind
+    var name: String
     
     struct Weather: Codable {
-        var main: String?
-        var description: String?
+        var main: String
+        var description: String
     }
     
     struct Main: Codable {
-        var temp: Double?
-        var feelsLike: Double?
-        var tempMin: Double?
-        var tempMax: Double?
+        var temp: Double
+        var feelsLike: Double
+        var tempMin: Double
+        var tempMax: Double
         
         enum CodingKeys: String, CodingKey {
             case temp = "temp"
@@ -34,8 +35,8 @@ struct WeatherData: Codable, Identifiable {
     }
     
     struct Wind: Codable {
-        var speed: Double?
-        var deg: Double?
+        var speed: Double
+        var deg: Double
     }
     
 }
