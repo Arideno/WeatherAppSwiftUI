@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct WeatherData: Codable {
+struct WeatherData: Codable, Identifiable {
     
+    var id: Int?
     var main: Main?
     var weather: [Weather]?
     var wind: Wind?

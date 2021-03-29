@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject var viewModel: MainViewModel
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List {
+            ForEach(viewModel.weatherDatas) { weatherData in
+                Text(weatherData.weather?.first?.main ?? "")
+            }
+        }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(viewModel: MainViewModel())
     }
 }
